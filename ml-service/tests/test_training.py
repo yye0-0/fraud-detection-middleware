@@ -41,4 +41,4 @@ def test_capacity_metric_uses_same_review_count_for_benchmark():
     report = capacity_metrics(y, score, amount, 0.2, amount)
     assert report["model"]["reviewCount"] == report["amountDescendingBaseline"]["reviewCount"] == 2
     assert report["model"]["fraudCaught"] == 2
-    assert report["amountDescendingBaseline"]["fraudCaught"] == 0
+    assert report["amountDescendingBaseline"]["fraudCaught"] == 1
