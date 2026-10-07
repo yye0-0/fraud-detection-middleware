@@ -1,0 +1,76 @@
+{
+  "evaluationType": "synthetic_workflow_demo",
+  "interpretation": "Pipeline and queue smoke evidence only; not a real-world fraud-performance estimate.",
+  "model": {
+    "modelVersion": "paysim-hgb-platt-v1",
+    "datasetId": "flwrlabs/fed-fraud-paysim-banks",
+    "datasetRevision": "e803add98e4f03e7fa3f9a54754404d6565a83d7",
+    "datasetLicense": "CC-BY-4.0",
+    "featureColumns": [
+      "type",
+      "step",
+      "log_amount",
+      "oldbalanceOrg",
+      "newbalanceOrig",
+      "oldbalanceDest",
+      "newbalanceDest",
+      "origin_balance_error",
+      "destination_balance_error",
+      "amount_to_origin_balance",
+      "origin_drained",
+      "destination_was_empty"
+    ],
+    "excludedColumns": [
+      "isFraud",
+      "isFlaggedFraud",
+      "BankID",
+      "nameOrig",
+      "nameDest"
+    ],
+    "split": {
+      "trainStepMax": 323,
+      "validationStepRange": [
+        324,
+        378
+      ],
+      "testStepMin": 379,
+      "testStepMax": 743,
+      "splitMethod": "chronological by step, with whole steps assigned to minimize row-share deviation"
+    },
+    "trainRowsAvailable": 4463587,
+    "trainRowsUsed": 300000,
+    "validationRows": 980416,
+    "testRows": 918617,
+    "reviewBudgetRate": 0.01,
+    "reviewThreshold": 5.0200383103732766e-05
+  },
+  "testMetrics": {
+    "transactions": 918617,
+    "fraudCases": 4006,
+    "fraudRate": 0.004361,
+    "averagePrecision": 0.999856,
+    "rocAuc": 0.999999,
+    "brierScore": 2e-06,
+    "reviewBudgetRate": 0.01,
+    "thresholdTestReviewRate": 0.013316,
+    "thresholdRateMultipleVsBudget": 1.332,
+    "thresholdReviewCount": 12232,
+    "thresholdQueueReviewCountWithExistingFlag": 12232,
+    "thresholdQueueReviewRateWithExistingFlag": 0.013316,
+    "thresholdQueuePrecisionWithExistingFlag": 0.327502,
+    "thresholdQueueFraudRecallWithExistingFlag": 1.0,
+    "topKPrecision": 0.436051,
+    "topKReviewRate": 0.010001,
+    "reviewsPer10000AtCapacity": 100,
+    "topKFalsePositiveReviews": 5181,
+    "topKFraudCaptured": 4006,
+    "topKFraudCaptureRate": 1.0,
+    "baselineFlaggedRate": 1.4e-05,
+    "baselineFlaggedCount": 13,
+    "baselineFlaggedFraudRecall": 0.003245,
+    "baselineFlaggedPrecision": 1.0,
+    "fraudRecallLiftVsExistingFlag": 0.996755,
+    "additionalFraudCasesCapturedVsExistingFlag": 3993,
+    "reviewsPer10000AtThreshold": 133
+  }
+}
