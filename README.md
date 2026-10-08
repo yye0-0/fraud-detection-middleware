@@ -182,8 +182,3 @@ cd transaction-service && mvn test
 
 Before claiming efficiency or fraud lift, run the training job and inspect the generated holdout report. A production evaluation would also require institution-owned data, time-based and entity-aware validation, drift monitoring, privacy/security controls, case-system integration, and a controlled pilot with analyst workload measurement.
 
-## Resume wording after you run it
-
-> Built a fraud case-triage workflow using a time-split PaySim benchmark, a calibrated class-imbalanced classifier, capacity-based review thresholds, and analyst disposition/audit capture; integrated the scorer with a Java/Spring Boot OOP rule engine, Redis velocity checks, PostgreSQL, and Kafka.
-
-Only include measured metrics after they appear in `evaluation.json`; identify the data as synthetic.
